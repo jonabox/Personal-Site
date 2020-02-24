@@ -1,6 +1,17 @@
 import colors from 'vuetify/es5/util/colors'
+const fs = require('fs');
 
+var server;
+if(process.env.NODE_ENV === 'production'){
+  server = {
+    https: {
+      key: fs.readFileSync('/etc/letsencrypt/live/jonabox.com/privkey.pem'),
+      cert: fs.readFileSync('/etc/letsencrypt/live/jonabox.com/cert.pem')
+    }
+  }
+}
 export default {
+  server,
   mode: 'universal',
   /*
   ** Headers of the page

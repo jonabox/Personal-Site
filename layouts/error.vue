@@ -1,44 +1,21 @@
 <template>
-  <v-app light>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
-      {{ otherError }}
-    </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
-  </v-app>
+  <v-layout>
+    <v-flex>
+      <v-card outlined color="rgb(0, 0, 0, 0.1)" class="my-3">
+                <v-card-text class="display-3 font-weight-thin text-center" style="word-break: normal">404: nothing to see here!</v-card-text>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
-export default {
-  layout: 'empty',
-  props: {
-    error: {
-      type: Object,
-      default: null
-    }
-  },
-  head () {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
-    return {
-      title
-    }
-  },
-  data () {
-    return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
-    }
-  }
-}
-</script>
+import Logo from "~/components/Logo.vue";
+import VuetifyLogo from "~/components/VuetifyLogo.vue";
 
-<style scoped>
-h1 {
-  font-size: 20px;
-}
-</style>
+export default {
+  components: {
+    Logo,
+    VuetifyLogo
+  }
+};
+</script>

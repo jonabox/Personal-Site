@@ -44,7 +44,59 @@
 
       <v-card outlined color="rgb(0, 0, 0, 0.1)" class="my-3">
         <v-card-title>Skills</v-card-title>
-        <v-card-text>Fully Bilingual (Spanish, English); Proficiency in Python, Java, JavaScript; Experience with AngularJS, Rust, Express, VueJS, SQL, cloud development (GCP, AWS EC2, Docker, Terraform), Git, HTML, CSS, and C++; Familiar with React, MongoDB, AutoCAD, Unity2D, Android Studio, Photoshop, FL Studio, 2D animation, video editing, 3D printing, Arduino systems, electronic tools, Unix systems, Redis, Gstreamer, WebRTC, FFmpeg</v-card-text>
+
+        <v-card-text>
+          <h4 class="display-7 font-weight-thin">Proficient Programming Languages and Frameworks</h4>
+          <ul>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>Vue.js</li>
+            <li>React.js</li>
+            <li>Java</li>
+            <li>Git</li>
+          </ul>
+        </v-card-text>
+
+        <v-card-text>
+          <h4 class="display-7 font-weight-thin">Familiar Programming Languages and Frameworks</h4>
+          <ul>
+            <li>Rust</li>
+            <li>HTML/CSS</li>
+            <li>SQL</li>
+            <li>Angular.js</li>
+            <li>React.js</li>
+            <li>C++</li>
+          </ul>
+        </v-card-text>
+
+        <v-card-text>
+          <h4 class="display-7 font-weight-thin">Software Tools</h4>
+          <ul>
+            <li>Amazon Web Services</li>
+            <li>Google Cloud</li>
+            <li>Docker</li>
+            <li>Terraform</li>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+            <li>Unix Command-Line</li>
+          </ul>
+        </v-card-text>
+
+        <v-card-text>
+          <h4 class="display-7 font-weight-thin">Other Skills</h4>
+          <ul>
+            <li>Fully Bilingual (Spanish, English)</li>
+            <li>Photoshop</li>
+            <li>Adobe After Effects</li>
+            <li>FL Studio</li>
+            <li>Intermediate Music Theory</li>
+            <li>AutoCAD</li>
+            <li>Makerspace Tools</li>
+            <li>Arduino and Teensy Microcontrollers</li>
+            <li>Electronic Lab Tools</li>
+          </ul>
+        </v-card-text>
+        
       </v-card>
     </v-flex>
   </v-layout>

@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background: linear-gradient(45deg, #005463 0%, #00633d 100%">
+  <v-app style="background: linear-gradient(45deg, #003152 0%, #004963 100%">
     <v-app-bar dense app clipped-left color="rgb(0, 0, 0, 0.7)">
       <v-toolbar-title v-text="title" />
       <v-spacer />

@@ -9,7 +9,7 @@
         <v-card-text>
           <p
             class="display-1 text-center"
-          >I am a 🇵🇷 Puerto Rican 🇵🇷 Master's Student at MIT. I hope to graduate by May 2021 and will be looking for full-time positions in the meantime. Exciting!!!</p>
+          >I am a Puerto Rican Master's Student at MIT. I hope to graduate by May 2021 and will be looking for full-time positions in the meantime. Exciting!!!</p>
         </v-card-text>
       </v-card>
     </v-flex>

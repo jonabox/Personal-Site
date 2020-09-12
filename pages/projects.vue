@@ -1,11 +1,11 @@
 <template>
   <v-layout>
     <v-flex>
-      <v-card outlined color="rgb(0, 0, 0, 0.1)" class="my-3">
-        <v-card-text class="display-3 font-weight-thin text-center" style="word-break: normal">Projects I have worked on</v-card-text>
+      <v-card flat color=transparent class="my-3">
+        <v-card-text class="display-3 text-center" style="word-break: normal">Projects I have worked on</v-card-text>
       </v-card>
 
-      <v-card outlined color="rgb(0, 0, 0, 0.1)" class="my-3">
+      <v-card flat color=transparent class="my-3">
         <v-card-title>Pizza-Partner</v-card-title>
         <v-card-subtitle>MIT Web Lab Project (2020)</v-card-subtitle>
         <v-card-text>
@@ -14,7 +14,7 @@
         </v-card-text>
       </v-card>
 
-      <v-card outlined color="rgb(0, 0, 0, 0.1)" class="my-3">
+      <v-card flat color=transparent class="my-3">
         <v-card-title>Multi-Party Computation Web Platform </v-card-title>
         <v-card-subtitle>MIT Research Program (2019) </v-card-subtitle>
         <v-card-text>
@@ -23,7 +23,7 @@
         </v-card-text>
       </v-card>
       
-      <v-card outlined color="rgb(0, 0, 0, 0.1)" class="my-3">
+      <v-card flat color=transparent class="my-3">
         <v-card-title>Mentorly</v-card-title>
         <v-card-subtitle>MIT 6.170 Software Studio Project (2018)</v-card-subtitle>
         <v-card-text>
@@ -32,7 +32,7 @@
         </v-card-text>
       </v-card>
 
-      <v-card outlined color="rgb(0, 0, 0, 0.1)" class="my-3">
+      <v-card flat color=transparent class="my-3">
         <v-card-title>History Box</v-card-title>
         <v-card-subtitle>MIT Web Lab Project (2018)</v-card-subtitle>
         <v-card-text>

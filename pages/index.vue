@@ -2,16 +2,16 @@
   <v-layout>
     <v-flex>
       <v-card flat color="transparent" class="my-4">
-        <v-card-text class="display-4 text-center" style="word-break: normal">Welcome to my site!</v-card-text>
+        <v-card-text class="display-1 text-center text-wrap">Welcome to my site!</v-card-text>
       </v-card>
-      <v-img class="center rounded-lg" max-width="1000px" dark :src="require('~/assets/iceland.jpeg')"></v-img>
       <v-card flat color="transparent" class="my-3">
         <v-card-text>
           <p
-            class="display-1 text-center"
+            class="text-center text-wrap"
           >I am a Puerto Rican Master's Student at MIT. I hope to graduate by May 2021 and will be looking for full-time positions in the meantime. Exciting!!!</p>
         </v-card-text>
       </v-card>
+      <v-img class="center rounded-lg" max-width="1000px" dark :src="require('~/assets/iceland.jpeg')"></v-img>
     </v-flex>
   </v-layout>
 </template>

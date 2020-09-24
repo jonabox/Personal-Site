@@ -2,7 +2,7 @@
   <v-layout>
     <v-flex>
       <v-card flat color=transparent class="my-3">
-        <v-card-text class="display-3 text-center" style="word-break: normal">Projects I have worked on</v-card-text>
+        <v-card-text class="display-1 text-center text-wrap" style="word-break: normal">Projects I have worked on</v-card-text>
       </v-card>
 
       <v-card flat color=transparent class="my-3">

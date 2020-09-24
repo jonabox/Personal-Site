@@ -39,6 +39,11 @@
         <nuxt />
       </v-container>
     </v-main>
+    <v-footer app absolute tile inset color="rgb(0, 0, 0, 0.1)">
+    Made with Nuxt.js, powered by Netlify ⚡
+    <v-spacer></v-spacer>
+    <div>&copy; {{ new Date().getFullYear() }}</div>
+  </v-footer>
   </v-app>
 </template>
 

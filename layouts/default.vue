@@ -35,7 +35,9 @@
       </v-list>
     </v-navigation-drawer>
     <v-main>
+      <v-container fluid>
         <nuxt />
+      </v-container>
     </v-main>
   </v-app>
 </template>

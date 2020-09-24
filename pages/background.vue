@@ -15,9 +15,9 @@
       </v-card>
 
       <v-card flat color="transparent" class="my-3">
-        <v-card-title>CSAIL Document Processing Research Assistant</v-card-title>
+        <v-card-title>Work and Research</v-card-title>
         <v-card-text>
-          <h4 class="display-7 font-weight-bold">Graduate Project Coordinator</h4>
+          <h4 class="display-7 font-weight-bold">CSAIL Document Processing Research Assistant and Project Coordinator</h4>
           <ul>
             <li>Collaborated with 8 fintech companies to coordinate internal project proposals relating to the processing of corporate documents using preprocessing techniques and OCR</li>
             <li>Held weekly meetings to discuss progress and timelines with team members and company sponsors</li>

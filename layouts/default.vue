@@ -1,6 +1,6 @@
 <template>
-  <v-app style="background: linear-gradient(45deg, #003152 0%, #004963 100%">
-    <v-app-bar dense app clipped-left color="rgb(0, 0, 0, 0.7)">
+  <v-app style="background: linear-gradient(45deg, #4e0052 0%, #3600cc 100%">
+    <v-app-bar dense app clipped-left color="rgb(0, 0, 0, 0.1)">
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-btn large icon href="https://github.com/jonabox">
@@ -13,7 +13,7 @@
         <v-icon>mdi-email</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-navigation-drawer clipped permanent app :mini-variant="isScreenSmall" color="rgb(0, 0, 0, 0.7)">
+    <v-navigation-drawer clipped permanent app :mini-variant="isScreenSmall" color="rgb(0, 0, 0, 0.1)">
       <v-list >
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
           <v-list-item-action>
@@ -39,7 +39,7 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer class="font-weight-light text-center text-caption" app absolute tile inset color="rgb(0, 0, 0, 0.1)">
+    <v-footer class="font-weight-light text-center text-caption" app absolute tile inset color="rgb(0, 0, 0, 0)">
     Made with Nuxt.js, powered by Netlify
     <v-spacer></v-spacer>
     <div>&copy; {{ new Date().getFullYear() }}</div>

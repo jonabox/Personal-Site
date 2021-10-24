@@ -8,7 +8,7 @@
         <v-card-text>
           <p
             class="text-center text-wrap"
-          >I am a Puerto Rican Master's Student at MIT. I hope to graduate by May 2021 and will be looking for full-time positions in the meantime. Exciting!!!</p>
+          >I am a Puerto Rican Master's Student at MIT. I hope to graduate by February 2022 and will be looking for full-time positions in the meantime. Exciting!!!</p>
         </v-card-text>
       </v-card>
       <v-img class="center rounded-lg" max-width="1000px" dark :src="require('~/assets/iceland.jpeg')"></v-img>

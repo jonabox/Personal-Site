@@ -6,8 +6,8 @@
       <v-btn large icon href="https://github.com/jonabox">
         <v-icon>mdi-github</v-icon>
       </v-btn>
-      <v-btn large icon>
-        <v-icon href="https://linkedin.com/in/jonathan-esteban-771066138/">mdi-linkedin</v-icon>
+      <v-btn large icon href="https://linkedin.com/in/jonathan-esteban-771066138/">
+        <v-icon>mdi-linkedin</v-icon>
       </v-btn>
       <v-btn large icon href="mailto:jesteban@mit.edu">
         <v-icon>mdi-email</v-icon>

@@ -11,7 +11,7 @@
           >I am a Puerto Rican Master's Student at MIT. I hope to graduate by February 2022 and will be looking for full-time positions in the meantime. Exciting!!!</p>
         </v-card-text>
       </v-card>
-      <v-img class="center rounded-lg" max-width="1000px" dark :src="require('~/assets/iceland.jpeg')"></v-img>
+      <v-img class="center rounded-lg" max-width="1000px" dark :src="require('~/assets/marina.jpg')"></v-img>
     </v-flex>
   </v-layout>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <v-app style="background: linear-gradient(45deg, #4e0052 0%, #3600cc 100%">
-    <v-app-bar dense app clipped-left color="rgb(0, 0, 0, 0.1)">
+    <v-app-bar dense app clipped-left color="rgb(0, 0, 0, 0.1)" style="backdrop-filter: blur(4px)">
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-btn large icon href="https://github.com/jonabox">

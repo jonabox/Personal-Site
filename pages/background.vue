@@ -14,9 +14,9 @@
         <v-card-subtitle>Massachusetts Institute of Technology</v-card-subtitle>
         <v-card-text>
           <p>
-            Candidate for Masters of Engineering Program in Computer Systems
+            Masters of Engineering Program in Computer Systems, 2022
           </p>
-          <p>Bachelor of Science in Computer Science, 2019</p>
+          <p>Bachelor of Science in Computer Science, 2020</p>
         </v-card-text>
       </v-card>
 
@@ -28,10 +28,10 @@
           </h4>
           <ul>
             <li>
-              Designing a web application to investigate the interaction of
+              Designed a web application to investigate the interaction of
               automated adversaries operating in simulated enterprise network
-              environments; utilizing open source tools such as Microsoft Battle
-              Sim and D3-force
+              environments by utilizing open source tools such as Microsoft CyberBattleSim
+              and D3-force. Source code available <a href="https://github.com/jonabox/Scenario-Based-Simulation-Platform">here</a>.
             </li>
           </ul>
         </v-card-text>

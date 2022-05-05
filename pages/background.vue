@@ -3,16 +3,16 @@
     <v-flex>
       <v-card flat color="transparent" class="my-3">
         <v-card-text
-          class="display-1 text-center text-wrap"
+          class="display-1 text-center text-wrap white--text"
           style="word-break: normal"
           >Background</v-card-text
         >
       </v-card>
 
-      <v-card flat color="transparent" class="my-3">
+      <v-card flat color="transparent" class="my-3 white--text">
         <v-card-title>Education</v-card-title>
-        <v-card-subtitle>Massachusetts Institute of Technology</v-card-subtitle>
-        <v-card-text>
+        <v-card-subtitle class="white--text">Massachusetts Institute of Technology</v-card-subtitle>
+        <v-card-text class="white--text">
           <p>
             Masters of Engineering Program in Computer Systems, 2022
           </p>
@@ -22,8 +22,8 @@
 
       <v-card flat color="transparent" class="my-3">
         <v-card-title>Work and Research</v-card-title>
-        <v-card-text>
-          <h4 class="display-7 font-weight-bold">
+        <v-card-text class="white--text">
+          <h4>
             Cybersecurity at MIT Sloan Research Assistant
           </h4>
           <ul>
@@ -35,8 +35,8 @@
             </li>
           </ul>
         </v-card-text>
-        <v-card-text>
-          <h4 class="display-7 font-weight-bold">
+        <v-card-text class="white--text">
+          <h4>
             Virtualitics Machine Learning internship
           </h4>
           <ul>
@@ -47,8 +47,8 @@
             </li>
           </ul>
         </v-card-text>
-        <v-card-text>
-          <h4 class="display-7 font-weight-bold">
+        <v-card-text class="white--text">
+          <h4>
             CSAIL Document Processing Research Assistant and Project Coordinator
           </h4>
           <ul>
@@ -63,8 +63,8 @@
             </li>
           </ul>
         </v-card-text>
-        <v-card-text>
-          <h4 class="display-7 font-weight-bold">
+        <v-card-text class="white--text">
+          <h4>
             Multi-Party Computation Project
           </h4>
           <ul>
@@ -89,8 +89,8 @@
           </ul>
         </v-card-text>
 
-        <v-card-text>
-          <h4 class="display-7 font-weight-bold">
+        <v-card-text class="white--text">
+          <h4>
             Vivint SmartHome Internship
           </h4>
           <ul>
@@ -105,8 +105,8 @@
           </ul>
         </v-card-text>
 
-        <v-card-text>
-          <h4 class="display-7 font-weight-bold">Cells for Cells Internship</h4>
+        <v-card-text class="white--text">
+          <h4>Cells for Cells Internship</h4>
           <ul>
             <li>
               Worked with a team of biotech investigators and facilitated CAD
@@ -124,7 +124,7 @@
           <v-row>
             <v-col>
               <v-card-text>
-                <h4 class="display-7 font-weight-bold">
+                <h4>
                   Proficient Programming Languages and Frameworks
                 </h4>
                 <ul>
@@ -139,7 +139,7 @@
             </v-col>
             <v-col>
               <v-card-text>
-                <h4 class="display-7 font-weight-bold">
+                <h4>
                   Familiar Programming Languages and Frameworks
                 </h4>
                 <ul>
@@ -156,7 +156,7 @@
           <v-row>
             <v-col>
               <v-card-text>
-                <h4 class="display-7 font-weight-bold">Software Tools</h4>
+                <h4>Software Tools</h4>
                 <ul>
                   <li>Amazon Web Services</li>
                   <li>Google Cloud</li>
@@ -170,7 +170,7 @@
             </v-col>
             <v-col>
               <v-card-text>
-                <h4 class="display-7 font-weight-bold">Other Skills</h4>
+                <h4>Other Skills</h4>
                 <ul>
                   <li>Fully Bilingual (Spanish, English)</li>
                   <li>Photoshop</li>

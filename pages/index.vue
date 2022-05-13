@@ -8,7 +8,7 @@
         <v-card-text>
           <p
             class="headline text-center text-wrap white--text"
-          >I am a Puerto Rican Master's Student at MIT. I hope to graduate by February 2022 and will be looking for full-time positions in the meantime. Exciting!!!</p>
+          >I am a Puerto Rican Master's alumn at MIT. I graduated in February 2022 and am currently looking for full-time positions. Exciting!!!</p>
         </v-card-text>
       </v-card>
       <v-img class="center rounded-lg" max-width="1000px" dark :src="require('~/assets/marina.jpg')" :lazy-src="require('~/assets/marina-min.jpg')"></v-img>

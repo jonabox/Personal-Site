@@ -1,17 +1,34 @@
 <template>
-  <v-layout >
+  <v-layout>
     <v-flex>
       <v-card flat color="transparent" class="my-4">
-        <v-card-text class="display-2 text-center text-wrap white--text">Welcome to my site!</v-card-text>
+        <v-card-text class="display-2 text-center text-wrap white--text"
+          >Welcome to my site!</v-card-text
+        >
       </v-card>
       <v-card flat color="transparent" class="my-3">
         <v-card-text>
-          <p
-            class="headline text-center text-wrap white--text"
-          >I am a Puerto Rican Master's Student at MIT. I hope to graduate by February 2022 and will be looking for full-time positions in the meantime. Exciting!!!</p>
+          <p class="headline text-center text-wrap white--text">
+            I am a Puerto Rican Master's Student at MIT. I hope to graduate by
+            February 2022 and will be looking for full-time positions in the
+            meantime. Exciting!!!
+          </p>
         </v-card-text>
       </v-card>
-      <v-img class="center rounded-lg" max-width="1000px" dark :src="require('~/assets/marina.jpg')" :lazy-src="require('~/assets/marina-min.jpg')"></v-img>
+      <v-img
+        class="center rounded-lg"
+        max-width="1000px"
+        dark
+        :src="require('~/assets/marina.jpg')"
+        :lazy-src="require('~/assets/marina-min.jpg')"
+        ><template v-slot:placeholder>
+          <v-row class="fill-height ma-0" align="center" justify="center">
+            <v-progress-circular
+              indeterminate
+              color="grey lighten-5"
+            ></v-progress-circular>
+          </v-row> </template
+      ></v-img>
     </v-flex>
   </v-layout>
 </template>
@@ -33,6 +50,6 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border-radius:10px;
+  border-radius: 10px;
 }
 </style>

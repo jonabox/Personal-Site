@@ -3,15 +3,18 @@
     <v-flex>
       <v-card flat color="transparent" class="my-4">
         <v-card-text class="display-2 text-center text-wrap white--text"
-          >Welcome to my site!</v-card-text
-        >
+          >Hi, welcome to my site!
+        </v-card-text>
       </v-card>
       <v-card flat color="transparent" class="my-3">
         <v-card-text>
           <p class="headline text-center text-wrap white--text">
-            I am a Puerto Rican Master's Student at MIT. I hope to graduate by
-            February 2022 and will be looking for full-time positions in the
-            meantime. Exciting!!!
+            I am a Puerto Rican Software Engineer interested in all things
+            software development, web design, and cyber-security.
+          </p>
+          <p class="subtitle-1 text-center text-wrap white--text">
+            I recently graduated from my Master's program at MIT in February
+            2022 and am currently looking for full-time positions. Exciting!!!
           </p>
         </v-card-text>
       </v-card>

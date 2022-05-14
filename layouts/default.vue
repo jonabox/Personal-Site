@@ -74,7 +74,7 @@ export default {
         },
       ],
       miniVariant: false,
-      title: "Jonathan Esteban",
+      title: "Jonathan Esteban Díaz",
     };
   },
 };

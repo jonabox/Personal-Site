@@ -22,8 +22,8 @@
         class="center rounded-lg"
         max-width="1000px"
         dark
-        :src="require('~/assets/marina.jpg')"
-        :lazy-src="require('~/assets/marina-min.jpg')"
+        :src="require('~/assets/grad_22.jpg')"
+        :lazy-src="require('~/assets/grad_22_min.jpg')"
         ><template v-slot:placeholder>
           <v-row class="fill-height ma-0" align="center" justify="center">
             <v-progress-circular

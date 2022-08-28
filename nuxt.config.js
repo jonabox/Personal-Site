@@ -2,6 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   target: 'static',
+
   /*
   ** Headers of the page
   */
@@ -16,6 +17,16 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+  devServer: {
+    proxy: {
+      "^/api": {
+        target: "https://accounts.spotify.com/api/token",
+        changeOrigin: true,
+        logLevel: "debug",
+        pathRewrite: { "^/api": "/" }
+      }
+    }
   },
   /*
   ** Customize the progress-bar color
@@ -40,8 +51,14 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [
-  ],
+  // modules: [
+  //   '@nuxtjs/proxy'
+  // ],
+
+
+  // proxy: {
+  //   '/api': { target: 'https://accounts.spotify.com/api', changeOrigin: true }
+  // },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
@@ -70,7 +87,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }

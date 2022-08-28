@@ -7,7 +7,11 @@
       color="rgb(0, 0, 0, 0.1)"
       style="backdrop-filter: blur(4px)"
     >
-      <v-toolbar-title v-text="title" />
+      <v-app-bar-nav-icon
+        v-if="isScreenSmall"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+      <v-toolbar-title v-text="isScreenSmall ? shortTitle : title" />
       <v-spacer />
       <v-btn large icon href="https://github.com/jonabox">
         <v-icon>mdi-github</v-icon>
@@ -25,10 +29,11 @@
     </v-app-bar>
     <v-navigation-drawer
       clipped
-      permanent
+      :permanent="!isScreenSmall"
+      v-model="drawer"
       app
-      :mini-variant="isScreenSmall"
       color="rgb(0, 0, 0, 0.1)"
+      style="backdrop-filter: blur(8px)"
     >
       <v-list>
         <v-list-item
@@ -83,7 +88,7 @@
 export default {
   computed: {
     isScreenSmall() {
-      return this.$vuetify.breakpoint.mdAndDown;
+      return this.$vuetify.breakpoint.xsOnly;
     },
   },
   data() {
@@ -104,9 +109,16 @@ export default {
           title: "Projects",
           to: "/projects",
         },
+        {
+          icon: "mdi-playlist-music",
+          title: "New Music",
+          to: "/new-music",
+        },
       ],
       miniVariant: false,
+      drawer: false,
       title: "Jonathan Esteban Díaz",
+      shortTitle: "Jonathan",
     };
   },
 };

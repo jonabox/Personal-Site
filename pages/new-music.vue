@@ -6,7 +6,7 @@
           class="white--text display-1 text-center text-wrap pb-0"
           style="word-break: normal"
         >
-          {{ "Featured New Releases!" }}
+          {{ "New Releases!" }}
         </v-card-text>
         <v-card-text
           class="white--text caption text-center text-wrap"
@@ -15,89 +15,116 @@
           (according to Spotify's API)
         </v-card-text>
         <!-- Country Selection -->
-        <v-autocomplete
-          :items="countries"
-          item-text="country"
-          item-value="country_code"
-          label="Music Market"
-          v-model="selectedCountry"
-          v-on:change="getReleases"
-        >
-          <template v-slot:item="slotProps">
-            <v-icon
-              :class="'mr-2 fi fi-' + slotProps.item.country_code.toLowerCase()"
-            ></v-icon>
-            {{ slotProps.item.country }}
-          </template>
-          <template v-slot:prepend>
-            <v-icon :class="'fi fi-' + selectedCountry.toLowerCase()"></v-icon>
-          </template>
-        </v-autocomplete>
+        <v-container fluid>
+          <v-row justify="center">
+            <v-col cols="auto">
+              <v-autocomplete
+                :items="countries"
+                item-text="country"
+                item-value="country_code"
+                label="Music Market"
+                color="rgb(255, 255, 255)"
+                v-model="selectedCountry"
+                v-on:change="getReleases"
+              >
+                <template v-slot:item="slotProps">
+                  <v-icon
+                    :class="
+                      'mr-2 fi fi-' + slotProps.item.country_code.toLowerCase()
+                    "
+                  ></v-icon>
+                  {{ slotProps.item.country }}
+                </template>
+                <template v-slot:prepend>
+                  <v-icon
+                    :class="'fi fi-' + selectedCountry.toLowerCase()"
+                  ></v-icon>
+                </template>
+              </v-autocomplete>
+            </v-col>
+            <v-col md="auto">
+              <v-switch
+                v-model="isHipster"
+                label="Hipster"
+                color="rgb(255, 255, 255)"
+                v-on:change="getReleases"
+              ></v-switch>
+            </v-col>
+            <v-col md="auto">
+              <v-switch
+                v-model="excludeSingles"
+                label="Albums Only"
+                color="rgb(255, 255, 255)"
+              ></v-switch>
+            </v-col>
+          </v-row>
+        </v-container>
         <v-container v-if="areAlbumsLoaded" fluid>
           <v-row justify="space-around">
             <!-- Release Cards -->
-            <v-card
-              v-for="item of albums"
-              class="my-3"
-              :key="item.id"
-              :max-width="profileSize"
-              color="rgb(0, 0, 0, 0.3)"
-            >
-              <!-- Release Title -->
-              <v-card-title class="pb-0">
-                <div
-                  style="
-                    white-space: nowrap;
-                    word-break: normal;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                  "
-                  v-text="item.name"
-                ></div>
-              </v-card-title>
-              <!-- Release Artists -->
-              <v-chip-group>
+            <v-template v-for="item of albums" :key="item.id">
+              <v-card
+                v-if="item.album_type == 'album' || !excludeSingles"
+                class="my-3"
+                :max-width="profileSize"
+                color="rgb(0, 0, 0, 0.3)"
+              >
+                <!-- Release Title -->
+                <v-card-title class="pb-0">
+                  <div
+                    style="
+                      white-space: nowrap;
+                      word-break: normal;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    "
+                    v-text="item.name"
+                  ></div>
+                </v-card-title>
+                <!-- Release Artists -->
+                <v-chip-group>
+                  <a
+                    v-for="(artist, index) in item.artists"
+                    :key="artist.id"
+                    :href="artist.external_urls.spotify"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="text-decoration: none; color: inherit"
+                  >
+                    <v-chip
+                      v-text="artist.name"
+                      label
+                      outlined
+                      :small="isScreenSmall"
+                      :class="index == 0 ? 'ml-1 mb-2' : 'mb-2'"
+                    >
+                    </v-chip>
+                  </a>
+                </v-chip-group>
+                <!-- Release Image -->
                 <a
-                  v-for="(artist, index) in item.artists"
-                  :key="artist.id"
-                  :href="artist.external_urls.spotify"
+                  :href="item.external_urls.spotify"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style="text-decoration: none; color:inherit"
+                  style="text-decoration: none"
                 >
-                  <v-chip
-                    v-text="artist.name"
-                    label
-                    outlined
-                    :small="isScreenSmall"
-                    :class="index == 0 ? 'ml-1 mb-2' : 'mb-2'"
+                  <!-- 0th and 2nd images corresponds to 640x640 and 64x64 resolutions, respectively -->
+                  <v-img
+                    :src="item.images[0].url"
+                    :lazy-src="item.images[2].url"
+                    :height="profileSize"
+                    :width="profileSize"
                   >
-                  </v-chip>
+                  </v-img>
                 </a>
-              </v-chip-group>
-              <!-- Release Image -->
-              <a
-                :href="item.external_urls.spotify"
-                target="_blank"
-                rel="noopener noreferrer"
-                style="text-decoration: none"
-              >
-                <!-- 0th and 2nd images corresponds to 640x640 and 64x64 resolutions, respectively -->
-                <v-img
-                  :src="item.images[0].url"
-                  :lazy-src="item.images[2].url"
-                  :height="profileSize"
-                  :width="profileSize"
-                >
-                </v-img>
-              </a>
-              <!-- Metadata -->
-              <v-card-actions class="pb-0">
-                <v-card-subtitle v-text="formatDate(item.release_date)" />
-                <v-spacer />
-                <v-card-subtitle v-text="item.album_type" />
-              </v-card-actions>
-            </v-card>
+                <!-- Metadata -->
+                <v-card-actions class="pb-0">
+                  <v-card-subtitle v-text="formatDate(item.release_date)" />
+                  <v-spacer />
+                  <v-card-subtitle v-text="item.album_type" />
+                </v-card-actions>
+              </v-card>
+            </v-template>
           </v-row>
         </v-container>
         <!-- Not yet loaded -->
@@ -141,11 +168,14 @@ export default {
   data() {
     return {
       areAlbumsLoaded: false,
+      uniqueAlbums: new Set(),
       albums: [],
       nextURL: null,
       token: null,
       countries: require("~/assets/countries.json"),
       selectedCountry: "US",
+      isHipster: false,
+      excludeSingles: false,
     };
   },
   methods: {
@@ -155,17 +185,30 @@ export default {
           Authorization: "Bearer " + this.token, //the token is a variable which holds the token
         },
         params: {
-          country: this.selectedCountry,
+          q: this.isHipster ? "tag:new tag:hipster" : "tag:new",
+          type: "album",
+          market: this.selectedCountry,
           limit: 50,
           token: this.token,
         },
       };
       axios
-        .get("https://api.spotify.com/v1/browse/new-releases", data)
+        .get("https://api.spotify.com/v1/search", data)
         .then((response) => {
-          this.albums = response.data.albums.items;
+          let items = response.data.albums.items;
+          items.sort(sortByDate);
+          // empty albums
+          this.albums = [];
+          this.uniqueAlbums = new Set();
+          for (let album of response.data.albums.items) {
+            if (!this.uniqueAlbums.has(album.name)) {
+              this.uniqueAlbums.add(album.name);
+              this.albums.push(album);
+            }
+          }
           this.nextURL = response.data.albums.next;
           this.areAlbumsLoaded = true;
+          console.log(response.data.albums.items);
         })
         .catch((error) => {
           console.log(error);
@@ -180,7 +223,14 @@ export default {
       axios
         .get(this.nextURL, data)
         .then((response) => {
-          this.albums = this.albums.concat(response.data.albums.items);
+          let items = response.data.albums.items;
+          items.sort(sortByDate);
+          for (let album of response.data.albums.items) {
+            if (!this.uniqueAlbums.has(album.name)) {
+              this.uniqueAlbums.add(album.name);
+              this.albums.push(album);
+            }
+          }
           // Spotify limits max number of featured releases to 100
           // this.nextURL = response.data.albums.next;
           console.log(response);
@@ -254,5 +304,14 @@ export default {
       return this.$vuetify.breakpoint.mdAndDown;
     },
   },
+};
+
+let sortByDate = function (a, b) {
+  var keyA = new Date(a.release_date),
+    keyB = new Date(b.release_date);
+  // Compare the 2 dates
+  if (keyA < keyB) return 1;
+  if (keyA > keyB) return -1;
+  return 0;
 };
 </script>

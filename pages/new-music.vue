@@ -26,6 +26,7 @@
                 color="rgb(255, 255, 255)"
                 v-model="selectedCountry"
                 v-on:change="getReleases"
+                :menu-props="autocompleteMenuProps"
               >
                 <template v-slot:item="slotProps">
                   <v-icon
@@ -37,7 +38,7 @@
                 </template>
                 <template v-slot:prepend>
                   <v-icon
-                    :class="'fi fi-' + selectedCountry.toLowerCase()"
+                    :class="'fi fi-' + (selectedCountry || '').toLowerCase()"
                   ></v-icon>
                 </template>
               </v-autocomplete>
@@ -48,6 +49,8 @@
                 label="Hipster"
                 color="rgb(255, 255, 255)"
                 v-on:change="getReleases"
+                hint="shows items with low popularity"
+                persistent-hint
               ></v-switch>
             </v-col>
             <v-col md="auto">
@@ -62,12 +65,13 @@
         <v-container v-if="areAlbumsLoaded" fluid>
           <v-row justify="space-around">
             <!-- Release Cards -->
-            <v-template v-for="item of albums" :key="item.id">
+            <template v-for="item of albums">
               <v-card
                 v-if="item.album_type == 'album' || !excludeSingles"
                 class="my-3"
                 :max-width="profileSize"
                 color="rgb(0, 0, 0, 0.3)"
+                :key="item.id"
               >
                 <!-- Release Title -->
                 <v-card-title class="pb-0">
@@ -124,7 +128,7 @@
                   <v-card-subtitle v-text="item.album_type" />
                 </v-card-actions>
               </v-card>
-            </v-template>
+            </template>
           </v-row>
         </v-container>
         <!-- Not yet loaded -->
@@ -302,6 +306,22 @@ export default {
     },
     isScreenSmall() {
       return this.$vuetify.breakpoint.mdAndDown;
+    },
+    autocompleteMenuProps() {
+      // default properties copied from the vuetify-autocomplete docs
+      let defaultProps = {
+        closeOnClick: false,
+        closeOnContentClick: false,
+        disableKeys: true,
+        openOnClick: false,
+        maxHeight: 304,
+      };
+
+      if (this.isScreenSmall) {
+        defaultProps.maxHeight = 150;
+        defaultProps.top = true;
+      }
+      return defaultProps;
     },
   },
 };

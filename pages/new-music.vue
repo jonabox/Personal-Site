@@ -49,7 +49,7 @@
                 label="Hipster"
                 color="rgb(255, 255, 255)"
                 v-on:change="getReleases"
-                hint="shows items with low popularity"
+                hint="show items with lower popularity"
                 persistent-hint
               ></v-switch>
             </v-col>
@@ -177,71 +177,128 @@ export default {
       nextURL: null,
       token: null,
       countries: require("~/assets/countries.json"),
-      selectedCountry: "US",
+      selectedCountry: "PR",
       isHipster: false,
       excludeSingles: false,
     };
   },
   methods: {
     getReleases() {
+      if (this.selectedCountry == "PR" || this.selectedCountry == "KR") {
+        this.getReleasesSpecial();
+      } else {
+        let data = {
+          headers: {
+            Authorization: "Bearer " + this.token, //the token is a variable which holds the token
+          },
+          params: {
+            q: this.isHipster ? "tag:new tag:hipster" : "tag:new",
+            type: "album",
+            market: this.selectedCountry,
+            limit: 50,
+            token: this.token,
+          },
+        };
+        axios
+          .get("https://api.spotify.com/v1/search", data)
+          .then((response) => {
+            let items = response.data.albums.items;
+            items.sort(sortByDate);
+            // empty albums
+            this.albums = [];
+            this.uniqueAlbums = new Set();
+            for (let album of response.data.albums.items) {
+              if (!this.uniqueAlbums.has(album.name)) {
+                this.uniqueAlbums.add(album.name);
+                this.albums.push(album);
+              }
+            }
+            this.nextURL = response.data.albums.next;
+            this.areAlbumsLoaded = true;
+            // console.log(response.data.albums.items);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    },
+    // Special Method for Puerto Rico since it is not supported natively in Spotify's API at time of writing
+    // Instead of searching for new music, we make a request to the "New Music {Country}" playlists,
+    // which often contains a lot of the country's new music
+    getReleasesSpecial() {
       let data = {
         headers: {
           Authorization: "Bearer " + this.token, //the token is a variable which holds the token
         },
         params: {
-          q: this.isHipster ? "tag:new tag:hipster" : "tag:new",
-          type: "album",
-          market: this.selectedCountry,
+          market: "US",
+          fields: "tracks",
           limit: 50,
           token: this.token,
         },
       };
+      let playlistId;
+      if (this.selectedCountry == "PR") {
+        // Corresponds to "Novedades Indie":"Novedades Viernes Latinoamerica" playlists respectively
+        playlistId = this.isHipster
+          ? "37i9dQZF1DXaaU1AaHpZeu"
+          : "37i9dQZF1DX8O2z77nfMgH";
+      } else if (this.selectedCountry == "KR") {
+        // Corresponds to "Fresh Finds Korea":"New Music K-Pop" playlists respectively
+        playlistId = this.isHipster
+          ? "37i9dQZF1DX7vZYLzFGQXc"
+          : "37i9dQZF1DXe5W6diBL5N4";
+      }
+
       axios
-        .get("https://api.spotify.com/v1/search", data)
+        .get("https://api.spotify.com/v1/playlists/" + playlistId, data)
         .then((response) => {
-          let items = response.data.albums.items;
-          items.sort(sortByDate);
+          let items = response.data.tracks.items;
+          items.sort(sortByDatePlaylist);
           // empty albums
           this.albums = [];
           this.uniqueAlbums = new Set();
-          for (let album of response.data.albums.items) {
+          for (let item of response.data.tracks.items) {
+            let album = item.track.album;
             if (!this.uniqueAlbums.has(album.name)) {
               this.uniqueAlbums.add(album.name);
               this.albums.push(album);
             }
           }
-          this.nextURL = response.data.albums.next;
+          this.nextURL = response.data.tracks.next;
           this.areAlbumsLoaded = true;
-          console.log(response.data.albums.items);
+          // console.log(response.data.tracks.items);
         })
         .catch((error) => {
           console.log(error);
         });
     },
     loadMoreAlbums() {
-      let data = {
-        headers: {
-          Authorization: "Bearer " + this.token, //the token is a variable which holds the token
-        },
-      };
-      axios
-        .get(this.nextURL, data)
-        .then((response) => {
-          let items = response.data.albums.items;
-          items.sort(sortByDate);
-          for (let album of response.data.albums.items) {
-            if (!this.uniqueAlbums.has(album.name)) {
-              this.uniqueAlbums.add(album.name);
-              this.albums.push(album);
+      if (this.nextURL) {
+        let data = {
+          headers: {
+            Authorization: "Bearer " + this.token, //the token is a variable which holds the token
+          },
+        };
+        axios
+          .get(this.nextURL, data)
+          .then((response) => {
+            let items = response.data.albums.items;
+            items.sort(sortByDate);
+            for (let album of response.data.albums.items) {
+              if (!this.uniqueAlbums.has(album.name)) {
+                this.uniqueAlbums.add(album.name);
+                this.albums.push(album);
+              }
             }
-          }
-          // Spotify limits max number of featured releases to 100
-          // this.nextURL = response.data.albums.next;
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+            // Spotify limits max number of featured releases to 100
+            // this.nextURL = response.data.albums.next;
+            // console.log(response);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     },
     getToken() {
       var client_id = "673577b735f84ce6a37c832559732ade";
@@ -329,6 +386,15 @@ export default {
 let sortByDate = function (a, b) {
   var keyA = new Date(a.release_date),
     keyB = new Date(b.release_date);
+  // Compare the 2 dates
+  if (keyA < keyB) return 1;
+  if (keyA > keyB) return -1;
+  return 0;
+};
+
+let sortByDatePlaylist = function (a, b) {
+  var keyA = new Date(a.track.album.release_date),
+    keyB = new Date(b.track.album.release_date);
   // Compare the 2 dates
   if (keyA < keyB) return 1;
   if (keyA > keyB) return -1;

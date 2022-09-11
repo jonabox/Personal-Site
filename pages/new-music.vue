@@ -259,10 +259,12 @@ export default {
           this.albums = [];
           this.uniqueAlbums = new Set();
           for (let item of response.data.tracks.items) {
-            let album = item.track.album;
-            if (!this.uniqueAlbums.has(album.name)) {
-              this.uniqueAlbums.add(album.name);
-              this.albums.push(album);
+            if (item.track) {
+              let album = item.track.album;
+              if (!this.uniqueAlbums.has(album.name)) {
+                this.uniqueAlbums.add(album.name);
+                this.albums.push(album);
+              }
             }
           }
           this.nextURL = response.data.tracks.next;
@@ -393,11 +395,19 @@ let sortByDate = function (a, b) {
 };
 
 let sortByDatePlaylist = function (a, b) {
-  var keyA = new Date(a.track.album.release_date),
-    keyB = new Date(b.track.album.release_date);
-  // Compare the 2 dates
-  if (keyA < keyB) return 1;
-  if (keyA > keyB) return -1;
-  return 0;
+  try {
+    var keyA = new Date(a.track.album.release_date),
+      keyB = new Date(b.track.album.release_date);
+    // Compare the 2 dates
+    if (keyA < keyB) return 1;
+    if (keyA > keyB) return -1;
+    return 0;
+  } catch (e) {
+    if (e instanceof TypeError) {
+      return 1;
+    } else {
+      throw e; // re-throw the error unchanged
+    }
+  }
 };
 </script>

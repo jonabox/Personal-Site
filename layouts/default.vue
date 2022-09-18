@@ -112,7 +112,7 @@ export default {
         {
           icon: "mdi-playlist-music",
           title: "New Music",
-          to: "/find-new-music",
+          to: "/new-music",
         },
       ],
       miniVariant: false,

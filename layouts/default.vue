@@ -32,10 +32,11 @@
       :permanent="!isScreenSmall"
       v-model="drawer"
       app
+      width="225px"
       color="rgb(0, 0, 0, 0.1)"
       style="backdrop-filter: blur(8px)"
     >
-      <v-list>
+      <v-list nav>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"

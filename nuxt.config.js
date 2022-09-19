@@ -2,7 +2,10 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   target: 'static',
-
+  ssr: false,
+  generate: {
+    fallback: true
+  },
   /*
   ** Headers of the page
   */

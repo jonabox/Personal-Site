@@ -47,6 +47,7 @@ export default {
   */
   buildModules: [
     '@nuxtjs/vuetify',
+    'nuxt-vite'
   ],
   /*
   ** Nuxt.js modules

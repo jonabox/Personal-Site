@@ -10,19 +10,41 @@
       </v-card>
 
       <v-card flat color="transparent" class="my-3">
+        <v-card-title>CyberBattleSim Web Platform</v-card-title>
+        <v-card-subtitle class="white--text"
+          >Master's Program Thesis Project</v-card-subtitle
+        >
+        <v-card-text class="white--text">
+          <p>
+            A web platform built to simulate adversarial movements through enterprise network environments.
+          </p>
+          <p>
+            Made with Vue (frontend), Vuetify (ui-toolkit), Python, Axios, D3,
+            CyberBattleSim.
+          </p>
+          Source code available
+          <a href="https://github.com/jonabox/CyberBattleSimWebUI">here</a>.
+          Paper available
+          <a href="https://jonabox.com/CBSP_Itasec22.pdf">here</a>.
+        </v-card-text>
+      </v-card>
+
+      <v-card flat color="transparent" class="my-3">
         <v-card-title>Ring Signature Scheme Web Platform</v-card-title>
         <v-card-subtitle class="white--text"
           >6.857 (Applied Cryptography) Final Project</v-card-subtitle
         >
         <v-card-text class="white--text">
           <p>
-            A web platform that enables messages to be signed with cryptographic ring signatures, allowing for official endorsement while preserving anonimity. 
+            A web platform that enables messages to be signed with cryptographic
+            ring signatures, allowing for official endorsement while preserving
+            anonimity.
           </p>
-          <p>
-            Made with Vue (frontend), Vuetify (ui-toolkit) and Python.
-          </p>
+          <p>Made with Vue (frontend), Vuetify (ui-toolkit), and Python.</p>
           Source code available
-          <a href="https://github.com/jonabox/Web-Based-Ring-Signature-Scheme">here</a>.
+          <a href="https://github.com/jonabox/Web-Based-Ring-Signature-Scheme"
+            >here</a
+          >.
         </v-card-text>
       </v-card>
 
@@ -39,7 +61,7 @@
             coupons to the combined order.
           </p>
           <p>
-            Made with Vue (frontend), Vuetify (ui-toolkit), SQLite (database)
+            Made with Vue (frontend), Vuetify (ui-toolkit), SQLite (database),
             Stripe.js (payments)
           </p>
           Source code available

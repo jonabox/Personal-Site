@@ -11,11 +11,11 @@
 
       <v-card flat color="transparent" class="my-3 white--text">
         <v-card-title>Education</v-card-title>
-        <v-card-subtitle class="white--text">Massachusetts Institute of Technology</v-card-subtitle>
+        <v-card-subtitle class="white--text"
+          >Massachusetts Institute of Technology</v-card-subtitle
+        >
         <v-card-text class="white--text">
-          <p>
-            Masters of Engineering Program in Computer Systems, 2022
-          </p>
+          <p>Masters of Engineering Program in Computer Systems, 2022</p>
           <p>Bachelor of Science in Computer Science, 2020</p>
         </v-card-text>
       </v-card>
@@ -23,22 +23,22 @@
       <v-card flat color="transparent" class="my-3">
         <v-card-title>Work and Research</v-card-title>
         <v-card-text class="white--text">
-          <h4>
-            Cybersecurity at MIT Sloan Research Assistant
-          </h4>
+          <h4>Cybersecurity at MIT Sloan Research Assistant</h4>
           <ul>
             <li>
               Designed a web application to investigate the interaction of
               automated adversaries operating in simulated enterprise network
-              environments by utilizing open source tools such as Microsoft CyberBattleSim
-              and D3-force. Source code available <a href="https://github.com/jonabox/Scenario-Based-Simulation-Platform">here</a>.
+              environments by utilizing open source tools such as Microsoft
+              CyberBattleSim and D3-force. Source code available
+              <a
+                href="https://github.com/jonabox/Scenario-Based-Simulation-Platform"
+                >here</a
+              >.
             </li>
           </ul>
         </v-card-text>
         <v-card-text class="white--text">
-          <h4>
-            Virtualitics Machine Learning internship
-          </h4>
+          <h4>Virtualitics Machine Learning Internship</h4>
           <ul>
             <li>
               Leveraged ML.NET to implement Time Series Forecasting; ran
@@ -58,15 +58,16 @@
               documents using preprocessing techniques and OCR
             </li>
             <li>
+              Lead a team of 6 undergraduates and coordinated weekly milestones
+            </li>
+            <li>
               Held weekly meetings to discuss progress and timelines with team
               members and company sponsors
             </li>
           </ul>
         </v-card-text>
         <v-card-text class="white--text">
-          <h4>
-            Multi-Party Computation Project
-          </h4>
+          <h4>Multi-Party Computation Project</h4>
           <ul>
             <li>
               Designed the foundation for a web platform that would encapsulate
@@ -90,9 +91,7 @@
         </v-card-text>
 
         <v-card-text class="white--text">
-          <h4>
-            Vivint SmartHome Internship
-          </h4>
+          <h4>Vivint SmartHome Internship</h4>
           <ul>
             <li>
               Worked on circumventing corporate firewalls using NAT traversing
@@ -120,14 +119,12 @@
 
       <v-card flat color="transparent" class="my-3">
         <v-card-title>Skills</v-card-title>
-        <v-container>
-          <v-row>
-            <v-col>
-              <v-card-text>
-                <h4>
-                  Proficient Programming Languages and Frameworks
-                </h4>
-                <ul>
+        <v-container fluid>
+          <v-row justify="start" no-gutters>
+            <v-col cols="auto" class="mr-6">
+              <v-card-text class="py-0">
+                <h4>Proficient Programming Languages and Frameworks</h4>
+                <ul class="mb-6">
                   <li>Python</li>
                   <li>JavaScript</li>
                   <li>Vue.js</li>
@@ -135,29 +132,8 @@
                   <li>Java</li>
                   <li>Git</li>
                 </ul>
-              </v-card-text>
-            </v-col>
-            <v-col>
-              <v-card-text>
-                <h4>
-                  Familiar Programming Languages and Frameworks
-                </h4>
-                <ul>
-                  <li>Rust</li>
-                  <li>HTML/CSS</li>
-                  <li>SQL</li>
-                  <li>Angular.js</li>
-                  <li>React.js</li>
-                  <li>C++</li>
-                </ul>
-              </v-card-text>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col>
-              <v-card-text>
                 <h4>Software Tools</h4>
-                <ul>
+                <ul class="mb-6">
                   <li>Amazon Web Services</li>
                   <li>Google Cloud</li>
                   <li>Docker</li>
@@ -168,10 +144,19 @@
                 </ul>
               </v-card-text>
             </v-col>
-            <v-col>
-              <v-card-text>
+            <v-col cols="auto">
+              <v-card-text class="py-0">
+                <h4>Familiar Programming Languages and Frameworks</h4>
+                <ul class="mb-6">
+                  <li>Rust</li>
+                  <li>HTML/CSS</li>
+                  <li>SQL</li>
+                  <li>Angular.js</li>
+                  <li>React.js</li>
+                  <li>C++</li>
+                </ul>
                 <h4>Other Skills</h4>
-                <ul>
+                <ul class="mb-6">
                   <li>Fully Bilingual (Spanish, English)</li>
                   <li>Photoshop</li>
                   <li>Adobe After Effects</li>

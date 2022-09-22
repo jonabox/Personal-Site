@@ -9,7 +9,7 @@
         <v-card-title>Pizza-Partner</v-card-title>
         <v-card-subtitle class="white--text">MIT Web Lab Project (2020)</v-card-subtitle>
         <v-card-text class="white--text">
-          <p> A webiste that lets students partner up with other students within the same dorm so that they can make a group Domino's order and can save money. Pizza Partner achieves this by automatically applying coupons to the combined order.</p> 
+          <p> A website that lets students partner up with other students within the same dorm so that they can make a group Domino's order and can save money. Pizza Partner achieves this by automatically applying coupons to the combined order.</p> 
           <p> Made with Vue (frontend), Vuetify (ui-toolkit), SQLite (database) Stripe.js (payments)</p> 
         </v-card-text>
       </v-card>

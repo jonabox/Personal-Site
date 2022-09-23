@@ -10,13 +10,16 @@
       </v-card>
 
       <v-card flat color="transparent" class="my-3">
-        <v-card-title>CyberBattleSim Web Platform</v-card-title>
+        <v-card-title style="word-break: normal"
+          >CyberBattleSim Web Platform</v-card-title
+        >
         <v-card-subtitle class="white--text"
-          >Master's Program Thesis Project</v-card-subtitle
+          >Master's Program Thesis Project (2021 - 2022)</v-card-subtitle
         >
         <v-card-text class="white--text">
           <p>
-            A web platform built to simulate adversarial movements through enterprise network environments.
+            A web platform built to simulate adversarial movements through
+            enterprise network environments.
           </p>
           <p>
             Made with Vue (frontend), Vuetify (ui-toolkit), Python, Axios, D3,
@@ -30,9 +33,11 @@
       </v-card>
 
       <v-card flat color="transparent" class="my-3">
-        <v-card-title>Ring Signature Scheme Web Platform</v-card-title>
+        <v-card-title style="word-break: normal"
+          >Ring Signature Scheme Web Platform</v-card-title
+        >
         <v-card-subtitle class="white--text"
-          >6.857 (Applied Cryptography) Final Project</v-card-subtitle
+          >6.857 (Applied Cryptography) Final Project (2020)</v-card-subtitle
         >
         <v-card-text class="white--text">
           <p>
@@ -49,7 +54,7 @@
       </v-card>
 
       <v-card flat color="transparent" class="my-3">
-        <v-card-title>Pizza-Partner</v-card-title>
+        <v-card-title style="word-break: normal">Pizza-Partner</v-card-title>
         <v-card-subtitle class="white--text"
           >MIT Web Lab Project (2020)</v-card-subtitle
         >
@@ -70,7 +75,9 @@
       </v-card>
 
       <v-card flat color="transparent" class="my-3">
-        <v-card-title>Multi-Party Computation Web Platform </v-card-title>
+        <v-card-title style="word-break: normal"
+          >Multi-Party Computation Web Platform
+        </v-card-title>
         <v-card-subtitle class="white--text"
           >MIT Research Program (2019)
         </v-card-subtitle>
@@ -87,7 +94,7 @@
       </v-card>
 
       <v-card flat color="transparent" class="my-3">
-        <v-card-title>Mentorly</v-card-title>
+        <v-card-title style="word-break: normal">Mentorly</v-card-title>
         <v-card-subtitle class="white--text"
           >MIT 6.170 Software Studio Project (2018)</v-card-subtitle
         >
@@ -104,7 +111,7 @@
       </v-card>
 
       <v-card flat color="transparent" class="my-3">
-        <v-card-title>History Box</v-card-title>
+        <v-card-title style="word-break: normal">History Box</v-card-title>
         <v-card-subtitle class="white--text"
           >MIT Web Lab Project (2018)</v-card-subtitle
         >
@@ -129,5 +136,30 @@ export default {
     Logo,
     VuetifyLogo,
   },
+//   data() {
+//     return {
+//       projects: [
+//         {
+//           title: "CyberBattleSim Web Platform",
+//           subtitle: "Master's Program Thesis Project",
+//           year: "2022",
+//           texts: [
+//             "A web platform built to simulate adversarial movements through enterprise network environments.",
+//             "Made with Vue (frontend), Vuetify (ui-toolkit), Python, Axios, D3, CyberBattleSim.",
+//           ],
+//           links: [
+//             {
+//               what: "Source Code",
+//               url: "https://github.com/jonabox/CyberBattleSimWebUI",
+//             },
+//             {
+//               what: "Paper",
+//               url: "https://jonabox.com/CBSP_Itasec22.pdf",
+//             },
+//           ],
+//         },
+//       ],
+//     };
+//   },
 };
 </script>

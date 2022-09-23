@@ -178,7 +178,7 @@ export default {
       token: null,
       countries: require("~/assets/countries.json"),
       selectedCountry: "PR",
-      isHipster: false,
+      isHipster: true,
       excludeSingles: false,
     };
   },

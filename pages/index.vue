@@ -12,10 +12,6 @@
             I am a Puerto Rican Software Engineer interested in all things
             software development, web design, and cyber-security.
           </p>
-          <p class="subtitle-1 text-center text-wrap white--text">
-            I recently graduated from my Master's program at MIT in February
-            2022 and am currently looking for full-time positions. Exciting!!!
-          </p>
         </v-card-text>
       </v-card>
       <v-img

@@ -18,8 +18,8 @@
         class="center rounded-lg"
         max-width="1000px"
         dark
-        :src="require('~/assets/grad_22.jpg')"
-        :lazy-src="require('~/assets/grad_22_min.jpg')"
+        :src="require('~/assets/iceland.jpeg')"
+        :lazy-src="require('~/assets/icelandLazy.jpeg')"
         ><template v-slot:placeholder>
           <v-row class="fill-height ma-0" align="center" justify="center">
             <v-progress-circular
